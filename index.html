@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serviço de Ligação</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-10">
+
+        <!-- Cabeçalho -->
+        <header class="d-flex align-items-center justify-content-center">
+          <img src="logoDAE.png" alt="Logo DAE" class="logoDAE me-3 img-fluid">
+          <div class="text-center">
+            <h1 class="mb-0">SERVIÇO DE LIGAÇÃO</h1>
+            <h2 class="h5 text-secondary">SOLICITAÇÃO DE LIGAÇÃO</h2>
+          </div>
+        </header>
+
+        <!-- Formulário principal -->
+        <main>
+          <div class="form-section">
+            <div class="row g-3">
+              
+              <div class="col-md-4">
+                <label for="processo" class="form-label">PROCESSO:</label>
+                <input type="text" id="processo" class="form-control">
+              </div>
+
+              <div class="col-md-4">
+                <label for="regional" class="form-label">REGIONAL:</label>
+                <select id="regional" class="form-select">
+                  <option value=""></option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label for="liberado" class="form-label">LIBERADO EM:</label>
+                <input type="date" id="liberado" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label for="executar" class="form-label">EXECUTAR ATÉ:</label>
+                <input type="date" id="executar" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label for="solicitacao" class="form-label">SOLICITAÇÃO DE:</label>
+                <select id="solicitacao" class="form-select">
+                  <option value=""></option>
+                  <option value="AGUA_ESGOTO">LIGAÇÃO DE ÁGUA E ESGOTO</option>
+                  <option value="SOMENTE_AGUA">LIGAÇÃO SOMENTE ÁGUA</option>
+                  <option value="SOMENTE_ESGOTO">LIGAÇÃO SOMENTE ESGOTO</option>
+                </select>
+              </div>
+              <div class="flex">
+              <div class="col-md-3">
+                <label for="hidrometro" class="form-label">HIDRÔMETRO:</label>
+                <input type="text" id="hidrometro" class="form-control">
+              </div>
+
+              <div class="col-md-4">
+                <label for="agua" class="form-label">ÁGUA:</label>
+                <select id="agua" class="form-select">
+                  <option value=""></option>
+                  <option value="PASSEIO">REDE DE ÁGUA NO PASSEIO</option>
+                  <option value="LOCALIZADO">RAMAL DE ÁGUA LOCALIZADO</option>
+                  <option value="LIGADA">ÁGUA LIGADA</option>
+                  <option value="NAO_LOCALIZADO">RAMAL DE ÁGUA NÃO LOCALIZADO</option>
+                  <option value="NAO_TEM">NÃO TEM RAMAL DE ÁGUA</option>
+                </select>
+              </div>
+                <div class="col-md-4">
+                <label for="esgoto" class="form-label">ESGOTO:</label>
+                <select id="esgoto" class="form-select">
+                  <option value=""></option>
+                  <option value="PASSEIO">REDE DE ESGOTO NO PASSEIO</option>
+                  <option value="LOCALIZADO">RAMAL DE ESGOTO LOCALIZADO</option>
+                  <option value="LIGADO">ESGOTO LIGADO</option>
+                  <option value="NAO_LOCALIZADO">RAMAL DE ESGOTO NÃO LOCALIZADO</option>
+                  <option value="NAO_TEM">NÃO TEM RAMAL DE ESGOTO</option>
+                </select>
+              </div>
+            </div>
+              <div class="col-md-6">
+                <label for="tipo_ligacao" class="form-label">TIPO DE LIGAÇÃO:</label>
+                <select id="tipo_ligacao" class="form-select">
+                  <option value=""></option>
+                  <option value="MANUAL">LIGAÇÃO MANUAL</option>
+                  <option value="ABERTURA">ABERTURA DE RUA</option>
+                  <option value="RELIGACAO">RELIGAÇÃO</option>
+                </select>
+              </div>
+
+
+
+              <div class="col-md-6">
+                <label for="abertura" class="form-label">ABERTURA:</label>
+                <select id="abertura" class="form-select">
+                  <option value=""></option>
+                  <option value="ASFALTO">ASFALTO</option>
+                  <option value="TERRA">TERRA</option>
+                  <option value="PARALELEPIPEDO">PARALELEPÍPEDO</option>
+                  <option value="OUTROS">OUTROS</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          </form>
+        </main>
+
+    <!-- TABELAS -->
+
+    <!-- LIGAÇÃO DE ÁGUA -->
+<div class="form-section mt-5">
+  <h2 class="section-title text-center mb-3">Ligação de Água</h2>
+
+  <!-- Redes existentes -->
+  <div class="mb-4">
+    <label class="form-label fw-bold">Redes existentes em mm:</label>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn25">
+          <label class="form-check-label" for="dn25">Dn25 - 1”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn50">
+          <label class="form-check-label" for="dn50">Dn50 - 2”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn75">
+          <label class="form-check-label" for="dn75">Dn75 - 3”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn100">
+          <label class="form-check-label" for="dn100">Dn100 - 4”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn125">
+          <label class="form-check-label" for="dn125">Dn125 - 5”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn150">
+          <label class="form-check-label" for="dn150">Dn150 - 6”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn200">
+          <label class="form-check-label" for="dn200">Dn200 - 8”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn250">
+          <label class="form-check-label" for="dn250">Dn250 - 10”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn300">
+          <label class="form-check-label" for="dn300">Dn300 - 12”</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tipo de material -->
+  <div class="mb-4">
+    <label class="form-label fw-bold">Tipo de material:</label>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="aco">
+          <label class="form-check-label" for="aco">Aço</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="ferro">
+          <label class="form-check-label" for="ferro">Ferro dúctil</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="pvcdefofo">
+          <label class="form-check-label" for="pvcdefofo">PVC Defofo</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="pvcmarrom">
+          <label class="form-check-label" for="pvcmarrom">PVC Marrom</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="fibrocimento">
+          <label class="form-check-label" for="fibrocimento">Fibrocimento</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-section">
+  <h2 class="section-title">Ligação de Esgoto</h2>
+
+  <!-- Redes existentes -->
+  <div class="mb-3">
+    <label class="form-label fw-bold">Redes existentes em mm:</label>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-2">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn150">
+          <label class="form-check-label" for="dn150">Dn150 - 6”</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="dn200">
+          <label class="form-check-label" for="dn200">Dn200 - 8”</label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex align-items-center gap-2">
+          <div class="form-check m-0">
+            <input class="form-check-input" type="checkbox" id="outras-esgoto">
+            <label class="form-check-label" for="outras-esgoto">Outras:</label>
+          </div>
+          <input type="text" class="form-control form-control-sm w-50" placeholder="Especifique">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tipo de material -->
+  <div class="mb-3">
+    <label class="form-label fw-bold">Tipo de material:</label>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-2">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="pvc">
+          <label class="form-check-label" for="pvc">PVC</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="manilha">
+          <label class="form-check-label" for="manilha">Manilha</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="concreto">
+          <label class="form-check-label" for="concreto">Tubo de concreto</label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex align-items-center gap-2">
+          <div class="form-check m-0">
+            <input class="form-check-input" type="checkbox" id="outros-material">
+            <label class="form-check-label" for="outros-material">Outros:</label>
+          </div>
+          <input type="text" class="form-control form-control-sm w-50" placeholder="Especifique">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="form-section mt-5">
+  <h2 class="section-title text-center mb-3">Equipe de execução</h2>
+  <!-- Execução e equipe -->
+  <div class="mb-3">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label fw-bold">Executado em:</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Data ou local">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label fw-bold">Coordenador de equipe:</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Nome do coordenador">
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <label class="form-label fw-bold">Operador:</label>
+        <input type="text" class="form-control form-control-sm">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label fw-bold">Encanador 1:</label>
+        <input type="text" class="form-control form-control-sm">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label fw-bold">Encanador 2:</label>
+        <input type="text" class="form-control form-control-sm">
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="form-section mb-5">
+            <h2 class="section-title">Materiais Utilizados</h2> 
+</div>
+
+
+        <!-- MATERIAIS -->
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr>
+                <th colspan="4" class="section-title">Água</th>
+                <th colspan="4" class="section-title">Esgoto</th>
+              </tr>
+              <tr>
+                <th>Quant.</th><th>Materiais</th><th>Especificação</th><th>Polegada</th>
+                <th>Quant.</th><th>Materiais</th><th>Especificação</th><th>Polegada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td>ABRAÇADEIRA</td><td></td><td></td><td></td><td>CIMENTO</td><td></td><td></td></tr>
+              <tr><td></td><td>ADAPTADOR</td><td></td><td></td><td></td><td>TUBO PVC</td><td></td><td></td></tr>
+              <tr><td></td><td>COLAR TOMADA</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>FERRULE</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>LACRE</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>LUVA LR</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>REGISTRO AZUL</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>TEE DESMEMBRAMENTO</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>TEE SERVIÇO</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>TUBO PEAD</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>UNIÃO</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td>LUVA FLEXÍVEL PEAD</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Asfalto:</strong> ( ) Sim &nbsp; <strong>Metragem:</strong> __________</p>
+        <p><strong>Calçada:</strong> ( ) Sim &nbsp; <strong>Metragem:</strong> __________</p>
+        <p><strong>Observações:</strong><br><br>____________________________________________________</p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

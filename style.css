@@ -1,0 +1,35 @@
+    .section-title {
+      text-align: center;
+      background-color: #f8f9fa;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    input, select {
+      margin-bottom: 12px;
+    }
+
+    .form-section {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    header {
+      border-bottom: 3px solid #004080;
+      margin-bottom: 20px;
+    }
+
+    .logoDAE {
+      max-width: 100px;
+    }
+    .flex {
+      display: flex;
+      gap: 16px;
+    }
