@@ -4,7 +4,6 @@
 
 * {
     box-sizing: border-box;
-    font-size: 12px;
 }
 
 body {
@@ -14,6 +13,7 @@ body {
     min-height: 100vh;
     background-color: #f9f9f9;
     color: #222;
+    font-size: 10px;
 }
 
 
@@ -49,7 +49,7 @@ legend {
     padding: 0 5px;
     margin-bottom: 5px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 10px;
 }
 
 
@@ -83,6 +83,8 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
 }
 
 input[type="text"]:focus,
@@ -209,7 +211,7 @@ select:focus {
 
 .cabecalho h1 {
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     margin: 8px 0 0 0;
 }
 
@@ -289,6 +291,13 @@ select:focus {
     width: 100%;
     margin-bottom: 0;
     border-collapse: collapse;
+
+    /*
+       IMPORTANTE:
+       auto permite que as colunas sejam dimensionadas
+       de acordo com o conteúdo.
+    */
+    table-layout: auto;
 }
 
 .tabela-materiais th,
@@ -297,6 +306,7 @@ select:focus {
     padding: 5px;
     height: 25px;
     font-size: 10px;
+    vertical-align: middle;
 }
 
 .tabela-materiais th {
@@ -305,11 +315,37 @@ select:focus {
     background-color: #f8f9fa;
 }
 
+
+/*
+   Quantidade e polegada ficam menores.
+*/
+
+.tabela-materiais th:nth-child(1),
 .tabela-materiais td:nth-child(1),
+.tabela-materiais th:nth-child(4),
 .tabela-materiais td:nth-child(4),
+.tabela-materiais th:nth-child(5),
 .tabela-materiais td:nth-child(5),
+.tabela-materiais th:nth-child(8),
 .tabela-materiais td:nth-child(8) {
     text-align: center;
+    white-space: nowrap;
+}
+
+
+/*
+   Material e especificação podem ocupar mais espaço.
+*/
+
+.tabela-materiais th:nth-child(2),
+.tabela-materiais td:nth-child(2),
+.tabela-materiais th:nth-child(3),
+.tabela-materiais td:nth-child(3),
+.tabela-materiais th:nth-child(6),
+.tabela-materiais td:nth-child(6),
+.tabela-materiais th:nth-child(7),
+.tabela-materiais td:nth-child(7) {
+    white-space: nowrap;
 }
 
 
@@ -370,6 +406,19 @@ button:hover {
 
 
 /* =========================================================
+   PÁGINAS
+   ========================================================= */
+
+.pagina {
+    width: 100%;
+}
+
+.pagina-2 {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
    RESPONSIVIDADE - TELA
    ========================================================= */
 
@@ -408,350 +457,33 @@ button:hover {
         flex-direction: column;
         gap: 5px;
     }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .tabela-materiais {
+        min-width: 750px;
+    }
 }
 
 
 /* =========================================================
-   =========================================================
-   IMPRESSÃO - A4 FRENTE E VERSO
-   =========================================================
+   IMPRESSÃO
    ========================================================= */
 
-@media print {
-
-    /* -----------------------------------------------------
-       PAPEL
-       ----------------------------------------------------- */
-
-    @page {
-        size: A4 portrait;
-        margin: 7mm;
-    }
-
-
-    /* -----------------------------------------------------
-       RESET DA TELA
-       ----------------------------------------------------- */
-
-    html,
-    body {
-        width: 210mm;
-        min-height: 297mm;
-        margin: 0;
-        padding: 0;
-        background: white !important;
-    }
-
-    body {
-        display: block;
-        font-family: Arial, sans-serif;
-    }
-
-
-    main.container {
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-
-    form {
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-        background: white !important;
-    }
-
-
-    /* -----------------------------------------------------
-       CADA PÁGINA A4
-       ----------------------------------------------------- */
-
-    .pagina {
-        width: 100%;
-        min-height: 283mm;
-        position: relative;
-    }
-
-
-    /* -----------------------------------------------------
-       QUEBRA ENTRE FRENTE E VERSO
-       ----------------------------------------------------- */
-
-    .pagina-2 {
-        break-before: page;
-        page-break-before: always;
-    }
-
-
-    /* -----------------------------------------------------
-       FONTE
-       ----------------------------------------------------- */
-
-    * {
-        font-size: 9px !important;
-        box-sizing: border-box;
-    }
-
-
-    /* -----------------------------------------------------
-       CABEÇALHO
-       ----------------------------------------------------- */
-
-    .cabecalho {
-        margin-bottom: 5px !important;
-        padding-bottom: 4px !important;
-        border-bottom: 2px solid #004080 !important;
-    }
-
-    .cabecalho-conteudo {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-
-    .logoDAE {
-        width: 85px !important;
-        height: 45px !important;
-    }
-
-    .dados-cabecalho {
-        min-width: 200px !important;
-        line-height: 1.2 !important;
-    }
-
-    .dados-cabecalho strong {
-        font-size: 9px !important;
-    }
-
-    .linha-cabecalho {
-        width: 100px !important;
-    }
-
-    .linha-cabecalho.pequena {
-        width: 70px !important;
-    }
-
-    .cabecalho h1 {
-        font-size: 14px !important;
-        margin: 3px 0 0 0 !important;
-    }
-
-
-    /* -----------------------------------------------------
-       FIELDSET
-       ----------------------------------------------------- */
-
-    fieldset {
-        margin-bottom: 4px !important;
-        padding: 4px 6px !important;
-        border: 1px solid #777 !important;
-        border-radius: 2px !important;
-    }
-
-    legend {
-        font-size: 8px !important;
-        margin-bottom: 2px !important;
-        padding: 0 3px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       CAMPOS
-       ----------------------------------------------------- */
-
-    input[type="text"],
-    input[type="tel"],
-    input[type="email"],
-    input[type="date"],
-    select {
-        height: 20px !important;
-        padding: 1px 4px !important;
-        margin-bottom: 3px !important;
-        font-size: 8px !important;
-        border: 1px solid #999 !important;
-        border-radius: 2px !important;
-    }
-
-    label {
-        font-size: 7px !important;
-        margin-bottom: 1px !important;
-    }
-
-    .field label {
-        font-size: 7px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       BOOTSTRAP GRID
-       ----------------------------------------------------- */
-
-    .row {
-        --bs-gutter-x: 5px !important;
-        --bs-gutter-y: 2px !important;
-    }
-
-    .g-2 {
-        --bs-gutter-x: 5px !important;
-        --bs-gutter-y: 2px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       TIPO
-       ----------------------------------------------------- */
-
-    .tipo {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 20px !important;
-    }
-
-    .tipo label {
-        font-size: 8px !important;
-        margin: 0 !important;
-    }
-
-
-    /* -----------------------------------------------------
-       RADIO
-       ----------------------------------------------------- */
-
-    .radio-group {
-        gap: 8px !important;
-        margin-top: 2px !important;
-    }
-
-    .radio-group label {
-        font-size: 7px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       SEÇÕES
-       ----------------------------------------------------- */
-
-    .form-section {
-        margin-top: 5px !important;
-        padding: 5px !important;
-        border: 1px solid #777 !important;
-        border-radius: 2px !important;
-    }
-
-    .section-title {
-        font-size: 9px !important;
-        padding: 2px !important;
-        margin-bottom: 4px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       CHECKBOXES
-       ----------------------------------------------------- */
-
-    .grupo-check {
-        margin-bottom: 5px !important;
-    }
-
-    .titulo-check {
-        font-size: 8px !important;
-        margin-bottom: 3px !important;
-    }
-
-    .check-grid {
-        display: grid !important;
-        grid-template-columns: repeat(5, 1fr) !important;
-        gap: 2px 5px !important;
-    }
-
-    .check-grid label {
-        font-size: 7px !important;
-        margin: 0 !important;
-    }
-
-    .campo-outros {
-        width: 80px !important;
-        height: 18px !important;
-        margin: 0 !important;
-        padding: 1px 3px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       TABELA
-       ----------------------------------------------------- */
-
-    .materiais-section {
-        margin-top: 5px !important;
-    }
-
-    .tabela-materiais {
-        width: 100% !important;
-        margin-bottom: 0 !important;
-    }
-
-    .tabela-materiais th,
-    .tabela-materiais td {
-        padding: 2px 3px !important;
-        height: 17px !important;
-        font-size: 7px !important;
-        line-height: 1.1 !important;
-    }
-
-
-    /* -----------------------------------------------------
-       FINAL
-       ----------------------------------------------------- */
-
-    .final-section {
-        margin-top: 5px !important;
-    }
-
-    .linha-final {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 40px !important;
-        margin-bottom: 4px !important;
-        font-size: 8px !important;
-    }
-
-    .observacoes {
-        margin-top: 4px !important;
-    }
-
-    .linha-observacao {
-        height: 15px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       NÃO IMPRIMIR
-       ----------------------------------------------------- */
-
-    .no-print,
-    button {
-        display: none !important;
-    }
-
-
-    /* -----------------------------------------------------
-       EVITAR QUEBRAS
-       ----------------------------------------------------- */
-
-    fieldset,
-    .form-section,
-    table,
-    tr,
-    .grupo-check {
-        break-inside: avoid !important;
-        page-break-inside: avoid !important;
-    }
-
-}
+/*
+   ATENÇÃO:
+
+   A impressão NÃO possui um layout diferente.
+
+   O objetivo é imprimir o formulário praticamente da mesma
+   maneira que ele aparece na tela.
+
+   Portanto, NÃO reduzimos:
+   - fonte para 7px / 8px;
+   - altura dos campos;
+   - tamanho do cabeçalho;
+   - espaçamento das seções;
+   - tamanho da tabela.
+*/
