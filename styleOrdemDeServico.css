@@ -1,0 +1,385 @@
+/* =========================================================
+   RESET E CONFIGURAÇÃO NATIVA
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+    font-size: 16px; /* Fonte global 18px */
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 10px auto;
+}
+
+form {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* =========================================================
+   MARGEM E CONTORNO DA PÁGINA (COM RESPIRO DE FURAÇÃO)
+   ========================================================= */
+
+.pagina {
+    padding: 10px 10px 10px 10px; /* Margem esquerda maior para furação */
+    border-radius: 6px;
+    background: #fff;
+}
+
+.pagina-2 {
+    margin-top: 20px;
+}
+
+/* =========================================================
+   SISTEMA DE GRID NATIVO
+   ========================================================= */
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.grid-4-col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1px;
+}
+
+/* =========================================================
+   ELEMENTOS DE FORMULÁRIO (FONTE 18px)
+   ========================================================= */
+
+fieldset {
+    margin-bottom: 3px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+legend {
+    width: auto;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label {
+    padding: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    height: 25px; /* Compactação vertical para que a P1 caiba perfeita */
+    padding: 1px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+textarea {
+    width: 100%;
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    resize: none;
+}
+
+.tipo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 1px 0;
+}
+
+.tipo label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: normal;
+    font-size: 16px;
+    padding: 0;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 25px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: normal;
+    font-size: 16px;
+    padding: 0;
+}
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.cabecalho {
+    margin-bottom: 3px;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 1px;
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoDAE {
+    width: 100px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.dados-cabecalho {
+    text-align: left;
+    line-height: 1.1;
+    font-size: 16px;
+}
+
+.dados-cabecalho div {
+    padding: 0;
+}
+
+.linha-cabecalho {
+    display: inline-block;
+    width: 110px;
+    border-bottom: 1px solid #333;
+}
+
+.linha-cabecalho.pequena {
+    width: 70px;
+}
+
+.cabecalho h1 {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 1px;
+    padding: 1px 0;
+}
+
+/* =========================================================
+   SEÇÕES E CHECKBOXES
+   ========================================================= */
+
+.form-section {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 4px 6px;
+    margin-top: 4px;
+}
+
+.section-title {
+    text-align: center;
+    background-color: #f8f9fa;
+    font-size: 18px;
+    padding: 2px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #ccc;
+}
+
+.grupo-check {
+    margin-bottom: 3px;
+}
+
+.titulo-check {
+    display: block;
+    font-weight: bold;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 16px;
+}
+
+.check-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+}
+
+.check-grid label {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-weight: normal;
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 1px 0;
+}
+
+.outras {
+    grid-column: span 2;
+}
+
+.campo-outros {
+    width: 110px !important;
+    height: 24px !important;
+    padding: 2px 4px !important;
+}
+
+/* =========================================================
+   TABELA DE MATERIAIS (13px)
+   ========================================================= */
+
+.tabela-materiais {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-materiais th,
+.tabela-materiais td {
+    border: 1px solid #777;
+    padding: 2px 5px;
+    height: 20px;
+    font-size: 13px !important;
+    vertical-align: middle;
+}
+
+.tabela-materiais th {
+    text-align: center;
+    background-color: #f8f9fa;
+    font-size: 13px !important;
+}
+
+/* =========================================================
+   FINAL E BOTÕES
+   ========================================================= */
+
+.linha-final {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 3px;
+    font-size: 18px;
+    padding: 1px 0;
+}
+
+.observacoes {
+    margin-top: 3px;
+    font-size: 18px;
+}
+
+.linha-observacao {
+    height: 18px;
+    border-bottom: 1px solid #777;
+}
+
+.botoes {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+/* =========================================================
+   REGRAS DE IMPRESSÃO COM MARGEM DE FURAÇÃO
+   ========================================================= */
+
+@media print {
+    @page {
+        margin: 4mm 4mm 4mm 18mm; /* Recuo para furação na margem esquerda */
+        size: A4 portrait;
+    }
+
+    body {
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    form {
+        box-shadow: none;
+        padding: 0;
+        border: none;
+        width: 100%;
+    }
+
+    .pagina {
+        padding: 10px 10px 10px 20px !important; 
+        box-sizing: border-box !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .pagina-1 {
+        page-break-after: always;
+        break-after: page;
+    }
+
+    .pagina-2 {
+        page-break-before: always;
+        break-before: page;
+        margin-top: 0;
+    }
+}

@@ -4,1225 +4,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Serviço de Ligação</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<main class="container mt-4">
+    <main class="container">
 
-<form action="#" method="post">
+        <form action="#" method="post">
 
-    <!-- =====================================================
+            <!-- =====================================================
          PÁGINA 1 - FRENTE
          ===================================================== -->
 
-    <div class="pagina pagina-1">
+            <div class="pagina pagina-1">
 
-        <!-- CABEÇALHO -->
-        <header class="cabecalho">
+                <!-- CABEÇALHO -->
+                <header class="cabecalho">
+                    <div class="cabecalho-conteudo">
+                        <img class="logoDAE" src="logoDAE.png" alt="Logo DAE">
+                        <div class="dados-cabecalho">
+                            <strong>SERVIÇO DE LIGAÇÃO</strong><br><br>
+                            <div>Processo: <span class="linha-cabecalho"></span></div><br>
+                            <div>Data: <span class="linha-cabecalho pequena"></span></div><br>
+                            <div>Nº Folha: <span class="linha-cabecalho pequena"></span></div>
+                        </div>
+                    </div>
+                    <br>
+                    <h1>SERVIÇO DE LIGAÇÃO</h1><br>
+                </header>
 
-            <div class="cabecalho-conteudo">
+                <br>
 
-                <img
-                    class="logoDAE"
-                    src="logoDAE.png"
-                    alt="Logo DAE"
-                >
+                <!-- TIPO DE SOLICITAÇÃO -->
+                <fieldset>
+                    <legend>Tipo de Solicitação</legend>
+                    <div class="tipo">
+                        <label><input type="checkbox" name="agua" value="agua"> Água</label>
+                        <label><input type="checkbox" name="esgoto" value="esgoto"> Esgoto</label>
+                        <label><input type="checkbox" name="religacao" value="religacao"> Religação com execução de
+                            ramais</label>
+                    </div>
+                </fieldset>
 
-                <div class="dados-cabecalho">
+                <!-- DADOS DO REQUERENTE -->
+                <fieldset>
+                    <legend>Dados do Requerente</legend>
+                    <div class="grid-2-col">
+                        <div class="field">
+                            <label for="requerente">Proprietário/Responsável:</label>
+                            <input type="text" id="requerente" name="requerente" required>
+                        </div>
+                        <div class="field">
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone">
+                        </div>
+                    </div>
+                </fieldset>
 
-                    <strong>SEÇÃO DE LIGAÇÃO</strong>
-
-                    <div>
-                        Processo:
-                        <span class="linha-cabecalho"></span>
+                <!-- DADOS DO IMÓVEL -->
+                <fieldset>
+                    <legend>Dados do Imóvel</legend>
+                    <div class="field">
+                        <label for="endereco">Endereço do local da ligação:</label>
+                        <input type="text" id="endereco" name="endereco" required>
                     </div>
 
-                    <div>
-                        Data:
-                        <span class="linha-cabecalho pequena"></span>
+                    <div class="grid-3-col">
+                        <div class="field">
+                            <label for="sql">Setor / Quadra / Lote</label>
+                            <input type="text" id="sql" name="sql" required>
+                        </div>
+                        <div class="field">
+                            <label for="hidrometro">Hidrômetro:</label>
+                            <input type="text" id="hidrometro" name="hidrometro" required>
+                        </div>
+                        <div class="field acesso">
+                            <label>Tipo de acesso:</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="acesso" value="asfalto" required> Asfalto</label>
+                                <label><input type="radio" name="acesso" value="terra"> Terra</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- INFORMAÇÕES PARA LIGAÇÃO -->
+                <fieldset>
+                    <legend>Informações para Ligação</legend>
+                    <div class="grid-3-col">
+                        <div class="field">
+                            <label for="processo">Processo:</label>
+                            <input type="text" id="processo" name="processo">
+                        </div>
+                        <div class="field">
+                            <label for="regional">Regional:</label>
+                            <select id="regional" name="regional">
+                                <option value=""></option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="liberado">Liberado em:</label>
+                            <input type="date" id="liberado" name="liberado">
+                        </div>
                     </div>
 
-                    <div>
-                        Nº Folha:
-                        <span class="linha-cabecalho pequena"></span>
+                    <div class="grid-2-col">
+                        <div class="field">
+                            <label for="executar">Executar até:</label>
+                            <input type="date" id="executar" name="executar">
+                        </div>
+                        <div class="field">
+                            <label for="solicitacao">Solicitação de:</label>
+                            <select id="solicitacao" name="solicitacao">
+                                <option value=""></option>
+                                <option value="AGUA_ESGOTO">LIGAÇÃO DE ÁGUA E ESGOTO</option>
+                                <option value="SOMENTE_AGUA">LIGAÇÃO SOMENTE ÁGUA</option>
+                                <option value="SOMENTE_ESGOTO">LIGAÇÃO SOMENTE ESGOTO</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="select_agua">Água:</label>
+                            <select id="select_agua" name="situacao_agua">
+                                <option value=""></option>
+                                <option value="PASSEIO">REDE DE ÁGUA NO PASSEIO</option>
+                                <option value="LOCALIZADO">RAMAL DE ÁGUA LOCALIZADO</option>
+                                <option value="LIGADA">ÁGUA LIGADA</option>
+                                <option value="NAO_LOCALIZADO">RAMAL DE ÁGUA NÃO LOCALIZADO</option>
+                                <option value="NAO_TEM">NÃO TEM RAMAL DE ÁGUA</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="select_esgoto">Esgoto:</label>
+                            <select id="select_esgoto" name="situacao_esgoto">
+                                <option value=""></option>
+                                <option value="PASSEIO">REDE DE ESGOTO NO PASSEIO</option>
+                                <option value="LOCALIZADO">RAMAL DE ESGOTO LOCALIZADO</option>
+                                <option value="LIGADO">ESGOTO LIGADO</option>
+                                <option value="NAO_LOCALIZADO">RAMAL DE ESGOTO NÃO LOCALIZADO</option>
+                                <option value="NAO_TEM">NÃO TEM RAMAL DE ESGOTO</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="tipo_ligacao">Tipo de ligação:</label>
+                            <select id="tipo_ligacao" name="tipo_ligacao">
+                                <option value=""></option>
+                                <option value="MANUAL">LIGAÇÃO MANUAL</option>
+                                <option value="ABERTURA">ABERTURA DE RUA</option>
+                                <option value="RELIGACAO">RELIGAÇÃO</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="abertura">Abertura:</label>
+                            <select id="abertura" name="abertura">
+                                <option value=""></option>
+                                <option value="ASFALTO">ASFALTO</option>
+                                <option value="TERRA">TERRA</option>
+                                <option value="PARALELEPIPEDO">PARALELEPÍPEDO</option>
+                                <option value="OUTROS">OUTROS</option>
+                            </select>
+                        </div>
                     </div>
-
-                </div>
-
-            </div>
-
-            <br>
-
-            <h1>SERVIÇO DE LIGAÇÃO</h1>
-
-        </header>
-
-
-        <!-- =================================================
-             TIPO DE SOLICITAÇÃO
-             ================================================= -->
-
-        <fieldset>
-
-            <legend>Tipo de Solicitação</legend>
-
-            <div class="tipo">
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="agua"
-                        value="agua">
-                    Água
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="esgoto"
-                        value="esgoto">
-                    Esgoto
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        name="religacao"
-                        value="religacao">
-                    Religação com execução de ramais
-                </label>
-
-            </div>
-
-        </fieldset>
-
-
-        <!-- =================================================
-             DADOS DO REQUERENTE
-             ================================================= -->
-
-        <fieldset>
-
-            <legend>Dados do Requerente</legend>
-
-            <div class="form-group row">
-
-                <div class="field campo-requerente">
-
-                    <label for="requerente">
-                        Proprietário/Responsável:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="requerente"
-                        name="requerente"
-                        required>
-
-                </div>
-
-                <div class="field campo-telefone">
-
-                    <label for="telefone">
-                        Telefone:
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="telefone"
-                        name="telefone">
-
-                </div>
-
-            </div>
-
-        </fieldset>
-
-
-        <!-- =================================================
-             DADOS DO IMÓVEL
-             ================================================= -->
-
-        <fieldset>
-
-            <legend>Dados do Imóvel</legend>
-
-            <div class="field">
-
-                <label for="endereco">
-                    Endereço do local da ligação:
-                </label>
-
-                <input
-                    type="text"
-                    id="endereco"
-                    name="endereco"
-                    required>
-
-            </div>
-
-
-            <div class="form-group row">
-
-                <div class="field">
-
-                    <label for="sql">
-                        S.Q.L.:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="sql"
-                        name="sql"
-                        required>
-
-                </div>
-
-                <div class="field">
-
-                    <label for="hidrometro">
-                        Hidrômetro:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="hidrometro"
-                        name="hidrometro"
-                        required>
-
-                </div>
-
-                <div class="field acesso">
-
-                    <label>
-                        Tipo de acesso:
-                    </label>
-
-                    <div class="radio-group">
-
-                        <label>
-                            <input
-                                type="radio"
-                                name="acesso"
-                                value="asfalto"
-                                required>
-                            Asfalto
-                        </label>
-
-                        <label>
-                            <input
-                                type="radio"
-                                name="acesso"
-                                value="terra">
-                            Terra
-                        </label>
-
+                    <!-- CAMPO OBSERVAÇÃO -->
+                    <div class="field">
+                        <label for="observacao_imovel">Observação:</label>
+                        <textarea id="observacao_imovel" name="observacao_imovel" rows="4"></textarea>
                     </div>
+                </fieldset>
 
-                </div>
+            </div><!-- FIM DA PÁGINA 1 -->
 
-            </div>
 
-            <div class="field">
-
-                <label for="observacao">
-                    Observação:
-                </label>
-
-                <input
-                    type="text"
-                    id="observacao"
-                    name="observacao">
-
-            </div>
-
-        </fieldset>
-
-
-        <!-- =================================================
-             INFORMAÇÕES PARA LIGAÇÃO
-             ================================================= -->
-
-        <fieldset>
-
-            <legend>Informações para Ligação</legend>
-
-            <div class="row g-2">
-
-                <div class="col-md-4">
-
-                    <label
-                        for="processo"
-                        class="form-label">
-                        Processo:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="processo"
-                        name="processo"
-                        class="form-control">
-
-                </div>
-
-
-                <div class="col-md-4">
-
-                    <label
-                        for="regional"
-                        class="form-label">
-                        Regional:
-                    </label>
-
-                    <select
-                        id="regional"
-                        name="regional"
-                        class="form-select">
-
-                        <option value=""></option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="col-md-4">
-
-                    <label
-                        for="liberado"
-                        class="form-label">
-                        Liberado em:
-                    </label>
-
-                    <input
-                        type="date"
-                        id="liberado"
-                        name="liberado"
-                        class="form-control">
-
-                </div>
-
-
-                <div class="col-md-6">
-
-                    <label
-                        for="executar"
-                        class="form-label">
-                        Executar até:
-                    </label>
-
-                    <input
-                        type="date"
-                        id="executar"
-                        name="executar"
-                        class="form-control">
-
-                </div>
-
-
-                <div class="col-md-6">
-
-                    <label
-                        for="solicitacao"
-                        class="form-label">
-                        Solicitação de:
-                    </label>
-
-                    <select
-                        id="solicitacao"
-                        name="solicitacao"
-                        class="form-select">
-
-                        <option value=""></option>
-
-                        <option value="AGUA_ESGOTO">
-                            LIGAÇÃO DE ÁGUA E ESGOTO
-                        </option>
-
-                        <option value="SOMENTE_AGUA">
-                            LIGAÇÃO SOMENTE ÁGUA
-                        </option>
-
-                        <option value="SOMENTE_ESGOTO">
-                            LIGAÇÃO SOMENTE ESGOTO
-                        </option>
-
-                    </select>
-
-                </div>
-
-                <div class="col-md-6">
-
-                    <label
-                        for="agua"
-                        class="form-label">
-                        Água:
-                    </label>
-
-                    <select
-                        id="agua"
-                        name="situacao_agua"
-                        class="form-select">
-
-                        <option value=""></option>
-
-                        <option value="PASSEIO">
-                            REDE DE ÁGUA NO PASSEIO
-                        </option>
-
-                        <option value="LOCALIZADO">
-                            RAMAL DE ÁGUA LOCALIZADO
-                        </option>
-
-                        <option value="LIGADA">
-                            ÁGUA LIGADA
-                        </option>
-
-                        <option value="NAO_LOCALIZADO">
-                            RAMAL DE ÁGUA NÃO LOCALIZADO
-                        </option>
-
-                        <option value="NAO_TEM">
-                            NÃO TEM RAMAL DE ÁGUA
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="col-md-6">
-
-                    <label
-                        for="esgoto"
-                        class="form-label">
-                        Esgoto:
-                    </label>
-
-                    <select
-                        id="esgoto"
-                        name="situacao_esgoto"
-                        class="form-select">
-
-                        <option value=""></option>
-
-                        <option value="PASSEIO">
-                            REDE DE ESGOTO NO PASSEIO
-                        </option>
-
-                        <option value="LOCALIZADO">
-                            RAMAL DE ESGOTO LOCALIZADO
-                        </option>
-
-                        <option value="LIGADO">
-                            ESGOTO LIGADO
-                        </option>
-
-                        <option value="NAO_LOCALIZADO">
-                            RAMAL DE ESGOTO NÃO LOCALIZADO
-                        </option>
-
-                        <option value="NAO_TEM">
-                            NÃO TEM RAMAL DE ESGOTO
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="col-md-6">
-
-                    <label
-                        for="tipo_ligacao"
-                        class="form-label">
-                        Tipo de ligação:
-                    </label>
-
-                    <select
-                        id="tipo_ligacao"
-                        name="tipo_ligacao"
-                        class="form-select">
-
-                        <option value=""></option>
-
-                        <option value="MANUAL">
-                            LIGAÇÃO MANUAL
-                        </option>
-
-                        <option value="ABERTURA">
-                            ABERTURA DE RUA
-                        </option>
-
-                        <option value="RELIGACAO">
-                            RELIGAÇÃO
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="col-md-6">
-
-                    <label
-                        for="abertura"
-                        class="form-label">
-                        Abertura:
-                    </label>
-
-                    <select
-                        id="abertura"
-                        name="abertura"
-                        class="form-select">
-
-                        <option value=""></option>
-
-                        <option value="ASFALTO">
-                            ASFALTO
-                        </option>
-
-                        <option value="TERRA">
-                            TERRA
-                        </option>
-
-                        <option value="PARALELEPIPEDO">
-                            PARALELEPÍPEDO
-                        </option>
-
-                        <option value="OUTROS">
-                            OUTROS
-                        </option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-        </fieldset>
-
-
-        <!-- =================================================
-             LIGAÇÃO DE ÁGUA
-             ================================================= -->
-
-        <section class="form-section">
-
-            <h2 class="section-title">
-                Ligação de Água
-            </h2>
-
-
-            <!-- REDES DE ÁGUA -->
-
-            <div class="grupo-check">
-
-                <label class="titulo-check">
-                    Redes existentes em mm:
-                </label>
-
-                <div class="check-grid">
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn25"
-                            name="agua_rede[]"
-                            value="25">
-                        Dn25 - 1"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn50"
-                            name="agua_rede[]"
-                            value="50">
-                        Dn50 - 2"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn75"
-                            name="agua_rede[]"
-                            value="75">
-                        Dn75 - 3"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn100"
-                            name="agua_rede[]"
-                            value="100">
-                        Dn100 - 4"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn125"
-                            name="agua_rede[]"
-                            value="125">
-                        Dn125 - 5"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn150"
-                            name="agua_rede[]"
-                            value="150">
-                        Dn150 - 6"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn200"
-                            name="agua_rede[]"
-                            value="200">
-                        Dn200 - 8"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn250"
-                            name="agua_rede[]"
-                            value="250">
-                        Dn250 - 10"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-dn300"
-                            name="agua_rede[]"
-                            value="300">
-                        Dn300 - 12"
-                    </label>
-
-                </div>
-
-            </div>
-
-
-            <!-- MATERIAL DA ÁGUA -->
-
-            <div class="grupo-check">
-
-                <label class="titulo-check">
-                    Tipo de material:
-                </label>
-
-                <div class="check-grid">
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-aco"
-                            name="agua_material[]"
-                            value="aco">
-                        Aço
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-ferro"
-                            name="agua_material[]"
-                            value="ferro">
-                        Ferro dúctil
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-pvcdefofo"
-                            name="agua_material[]"
-                            value="pvcdefofo">
-                        PVC Defofo
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-pvcmarrom"
-                            name="agua_material[]"
-                            value="pvcmarrom">
-                        PVC Marrom
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="agua-fibrocimento"
-                            name="agua_material[]"
-                            value="fibrocimento">
-                        Fibrocimento
-                    </label>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </div>
-
-
-    <!-- =====================================================
-         PÁGINA 2 - VERSO
+            <!-- =====================================================
+         PÁGINA 2 - VERSO (INICIA EM LIGAÇÃO DE ÁGUA)
          ===================================================== -->
 
-    <div class="pagina pagina-2">
+            <div class="pagina pagina-2">
+
+                <!-- LIGAÇÃO DE ÁGUA -->
+                <section class="form-section">
+                    <h2 class="section-title">Ligação de Água</h2>
+                    <div class="grupo-check">
+                        <label class="titulo-check">Redes existentes em mm:</label>
+                        <div class="check-grid">
+                            <label><input type="checkbox" id="agua-dn25" name="agua_rede[]" value="25"> Dn25 -
+                                1"</label>
+                            <label><input type="checkbox" id="agua-dn50" name="agua_rede[]" value="50"> Dn50 -
+                                2"</label>
+                            <label><input type="checkbox" id="agua-dn75" name="agua_rede[]" value="75"> Dn75 -
+                                3"</label>
+                            <label><input type="checkbox" id="agua-dn100" name="agua_rede[]" value="100"> Dn100 -
+                                4"</label>
+                            <label><input type="checkbox" id="agua-dn125" name="agua_rede[]" value="125"> Dn125 -
+                                5"</label>
+                            <label><input type="checkbox" id="agua-dn150" name="agua_rede[]" value="150"> Dn150 -
+                                6"</label>
+                            <label><input type="checkbox" id="agua-dn200" name="agua_rede[]" value="200"> Dn200 -
+                                8"</label>
+                            <label><input type="checkbox" id="agua-dn250" name="agua_rede[]" value="250"> Dn250 -
+                                10"</label>
+                            <label><input type="checkbox" id="agua-dn300" name="agua_rede[]" value="300"> Dn300 -
+                                12"</label>
+                        </div>
+                    </div>
+
+                    <div class="grupo-check">
+                        <label class="titulo-check">Tipo de material:</label>
+                        <div class="check-grid">
+                            <label><input type="checkbox" id="agua-aco" name="agua_material[]" value="aco">Aço</label>
+                            <label><input type="checkbox" id="agua-ferro" name="agua_material[]" value="ferro">Ferro dúctil</label>
+                            <label><input type="checkbox" id="agua-pvcdefofo" name="agua_material[]" value="pvcdefofo">PVC Defofo</label>
+                            <label><input type="checkbox" id="agua-pvcmarrom" name="agua_material[]" value="pvcmarrom">PVC Marrom</label>
+                            <label><input type="checkbox" id="agua-fibrocimento" name="agua_material[]" value="fibrocimento">Fibrocimento</label>
+                        </div>
+                    </div>
+                    <div class="grid-4-col">
+                        <div class="field">
+                            <label for="operador">Posição da rede:</label>
+                            <label for="rua">Rua <input type="checkbox" id="rua" name="rua"></label>
+                            <label for="rua">Passeio <input type="checkbox" name="passeio" id="passeio">
+                        </div>
+                        <div class="field">
+                            <label for="profundidade">Distante da guia:</label>
+                            <label for="rua">___ Guia par <input type="checkbox" id="rua" name="rua"></label>
+                            <label for="rua">___ Lote impar <input type="checkbox" name="passeio" id="passeio"></label>
+                        </div>
+                        <div class="field">
+                            <label for="distancia">Distante do lote:</label>
+                            <label for="rua">___ Lote par <input type="checkbox" id="rua" name="rua"></label>
+                            <label for="rua">___ Lote impar <input type="checkbox" name="passeio" id="passeio"></label>
+                        </div>
+                        <div class="field">
+                            <label for="distancia">Profundidade:</label>
+                            <input type="text">
+                        </div>
+                    </div>
 
 
-        <!-- =================================================
-             LIGAÇÃO DE ESGOTO
-             ================================================= -->
 
-        <section class="form-section">
+                </section>
 
-            <h2 class="section-title">
-                Ligação de Esgoto
-            </h2>
+                <!-- LIGAÇÃO DE ESGOTO -->
+                <section class="form-section">
+                    <h2 class="section-title">Ligação de Esgoto</h2>
+                    <div class="grupo-check">
+                        <label class="titulo-check">Redes existentes em mm:</label>
+                        <div class="check-grid">
+                            <label><input type="checkbox" id="esgoto-dn150" name="esgoto_rede[]" value="150">Dn150 - 6"</label>
+                            <label><input type="checkbox" id="esgoto-dn200" name="esgoto_rede[]" value="200">Dn200 - 8"</label>
+                            <label><input type="checkbox" id="esgoto-outras" name="esgoto_rede[]" value="outras">Outras</label>
+                        </div>
+                    </div>
 
+                    <div class="grupo-check">
+                        <label class="titulo-check">Tipo de material:</label>
+                        <div class="check-grid">
+                            <label><input type="checkbox" id="esgoto-pvc" name="esgoto_material[]" value="pvc">PVC</label>
+                            <label><input type="checkbox" id="esgoto-manilha" name="esgoto_material[]" value="manilha">Manilha</label>
+                            <label><input type="checkbox" id="esgoto-concreto" name="esgoto_material[]" value="concreto">Tubo de concreto</label>
+                        </div>
+                        <div class="grid-4-col">
+                            <div class="field">
+                                <label for="operador">Posição da rede:</label>
+                                <label for="rua">Rua <input type="checkbox" id="rua" name="rua"></label>
+                                <label for="rua">Passeio <input type="checkbox" name="passeio" id="passeio">
+                            </div>
+                            <div class="field">
+                                <label for="profundidade">Distante da guia:</label>
+                                <label for="rua">___ Guia par <input type="checkbox" id="rua" name="rua"></label>
+                                <label for="rua">___ Guia impar <input type="checkbox" name="passeio" id="passeio"></label>
 
-            <!-- REDES DE ESGOTO -->
+                            </div>
+                            <div class="field">
+                                <label for="distancia">Distante do lote:</label>
+                                <label for="rua">___ Lote par <input type="checkbox" id="rua" name="rua"></label>
+                                <label for="rua">___ Lote impar <input type="checkbox" name="passeio" id="passeio"></label>
+                            </div>
+                            <div class="field">
+                                <label for="distancia">Profundidade:</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            <div class="grupo-check">
+                <!-- EQUIPE DE EXECUÇÃO -->
+                <section class="form-section">
+                    <h2 class="section-title">Equipe que executou o serviço em _____/_____/_____</h2>.
+                    <div class="grid-4-col">
+                        <div class="field">
+                            <label for="coordenador">Coordenador:</label>
+                            <input type="text" id="coordenador" name="coordenador">
+                        </div>
+                        <div class="field">
+                            <label for="operador">Operador:</label>
+                            <input type="text" id="operador" name="operador">
+                        </div>
+                        <div class="field">
+                            <label for="encanador1">Encanador:</label>
+                            <input type="text" id="encanador1" name="encanador1">
+                        </div>
+                        <div class="field">
+                            <label for="encanador2">Encanador:</label>
+                            <input type="text" id="encanador2" name="encanador2">
+                        </div>
+                    </div>
+                </section>
 
-                <label class="titulo-check">
-                    Redes existentes em mm:
-                </label>
+                <!-- MATERIAIS UTILIZADOS -->
+                <section class="form-section materiais-section">
+                    <h2 class="section-title">Materiais Utilizados</h2>
+                    <div class="table-responsive">
+                        <table class="tabela-materiais">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Água</th>
+                                    <th colspan="4">Esgoto</th>
+                                </tr>
+                                <tr>
+                                    <th>Quant.</th>
+                                    <th>Materiais</th>
+                                    <th>Especificação</th>
+                                    <th>Polegada</th>
+                                    <th>Quant.</th>
+                                    <th>Materiais</th>
+                                    <th>Especificação</th>
+                                    <th>Polegada</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>ABRAÇADEIRA</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>CIMENTO</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>ADAPTADOR</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>TUBO PVC</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>COLAR TOMADA</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>FERRULE</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>LACRE</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>LUVA LR</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>REGISTRO AZUL</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>TEE DESMEMBRAMENTO</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>TEE SERVIÇO</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>TUBO PEAD</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>UNIÃO</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>LUVA FLEXÍVEL PEAD</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
-                <div class="check-grid">
+                <!-- FINAL -->
+                <h2>( ) Asfalto &nbsp; &nbsp; ( ) Calçada &nbsp; &nbsp; Metragem: ____________ </h2>
 
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="esgoto-dn150"
-                            name="esgoto_rede[]"
-                            value="150">
-                        Dn150 - 6"
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="esgoto-dn200"
-                            name="esgoto_rede[]"
-                            value="200">
-                        Dn200 - 8"
-                    </label>
-
-                    <label class="outras">
-
-                        <input
-                            type="checkbox"
-                            id="esgoto-outras"
-                            name="esgoto_rede[]"
-                            value="outras">
-
-                        Outras:
-
-                        <input
-                            type="text"
-                            id="esgoto-outras-texto"
-                            name="esgoto_outras"
-                            class="campo-outros">
-
-                    </label>
-
+                <!-- BOTÕES - NÃO IMPRIMIR -->
+                <div class="botoes no-print">
+                    <button type="button" onclick="window.print()">Imprimir</button>
+                    <button type="reset" class="btn-secondary">Limpar</button>
                 </div>
 
-            </div>
+            </div><!-- FIM DA PÁGINA 2 -->
 
+        </form>
 
-            <!-- MATERIAL DO ESGOTO -->
-
-            <div class="grupo-check">
-
-                <label class="titulo-check">
-                    Tipo de material:
-                </label>
-
-                <div class="check-grid">
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="esgoto-pvc"
-                            name="esgoto_material[]"
-                            value="pvc">
-                        PVC
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="esgoto-manilha"
-                            name="esgoto_material[]"
-                            value="manilha">
-                        Manilha
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            id="esgoto-concreto"
-                            name="esgoto_material[]"
-                            value="concreto">
-                        Tubo de concreto
-                    </label>
-
-                    <label class="outras">
-
-                        <input
-                            type="checkbox"
-                            id="esgoto-outro-material"
-                            name="esgoto_material[]"
-                            value="outros">
-
-                        Outros:
-
-                        <input
-                            type="text"
-                            id="esgoto-outro-material-texto"
-                            name="esgoto_outro_material"
-                            class="campo-outros">
-
-                    </label>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             EQUIPE DE EXECUÇÃO
-             ================================================= -->
-
-        <section class="form-section">
-
-            <h2 class="section-title">
-                Equipe de Execução
-            </h2>
-
-
-            <div class="row g-2">
-
-                <div class="col-md-6">
-
-                    <label
-                        for="executado_em"
-                        class="form-label">
-                        Executado em:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="executado_em"
-                        name="executado_em"
-                        class="form-control">
-
-                </div>
-
-
-                <div class="col-md-6">
-
-                    <label
-                        for="coordenador"
-                        class="form-label">
-                        Coordenador de equipe:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="coordenador"
-                        name="coordenador"
-                        class="form-control">
-
-                </div>
-
-
-                <div class="col-md-4">
-
-                    <label
-                        for="operador"
-                        class="form-label">
-                        Operador:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="operador"
-                        name="operador"
-                        class="form-control">
-
-                </div>
-
-
-                <div class="col-md-4">
-
-                    <label
-                        for="encanador1"
-                        class="form-label">
-                        Encanador 1:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="encanador1"
-                        name="encanador1"
-                        class="form-control">
-
-                </div>
-
-
-                <div class="col-md-4">
-
-                    <label
-                        for="encanador2"
-                        class="form-label">
-                        Encanador 2:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="encanador2"
-                        name="encanador2"
-                        class="form-control">
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             MATERIAIS UTILIZADOS
-             ================================================= -->
-
-        <section class="form-section materiais-section">
-
-            <h2 class="section-title">
-                Materiais Utilizados
-            </h2>
-
-
-            <div class="table-responsive">
-
-                <table class="table table-bordered tabela-materiais">
-
-                    <thead>
-
-                        <tr>
-
-                            <th colspan="4">
-                                Água
-                            </th>
-
-                            <th colspan="4">
-                                Esgoto
-                            </th>
-
-                        </tr>
-
-                        <tr>
-
-                            <th>Quant.</th>
-                            <th>Materiais</th>
-                            <th>Especificação</th>
-                            <th>Polegada</th>
-
-                            <th>Quant.</th>
-                            <th>Materiais</th>
-                            <th>Especificação</th>
-                            <th>Polegada</th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody>
-
-                        <tr>
-
-                            <td></td>
-                            <td>ABRAÇADEIRA</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td>CIMENTO</td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>ADAPTADOR</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td>TUBO PVC</td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>COLAR TOMADA</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>FERRULE</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>LACRE</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>LUVA LR</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>REGISTRO AZUL</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>TEE DESMEMBRAMENTO</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>TEE SERVIÇO</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>TUBO PEAD</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>UNIÃO</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td></td>
-                            <td>LUVA FLEXÍVEL PEAD</td>
-                            <td></td>
-                            <td></td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             FINAL
-             ================================================= -->
-
-        <section class="form-section final-section">
-
-            <div class="linha-final">
-
-                <div>
-                    <strong>Asfalto:</strong>
-                    ( ) Sim
-                </div>
-
-                <div>
-                    <strong>Metragem:</strong>
-                    __________________
-                </div>
-
-            </div>
-
-
-            <div class="linha-final">
-
-                <div>
-                    <strong>Calçada:</strong>
-                    ( ) Sim
-                </div>
-
-                <div>
-                    <strong>Metragem:</strong>
-                    __________________
-                </div>
-
-            </div>
-
-
-            <div class="observacoes">
-
-                <strong>Observações:</strong>
-
-                <div class="linha-observacao"></div>
-
-                <div class="linha-observacao"></div>
-
-            </div>
-
-        </section>
-
-
-        <!-- BOTÕES - NÃO IMPRIMIR -->
-
-        <div class="botoes no-print">
-
-            <button
-                type="button"
-                onclick="window.print()">
-                Imprimir
-            </button>
-
-            <button
-                type="reset"
-                class="btn-secondary">
-                Limpar
-            </button>
-
-        </div>
-
-    </div>
-
-</form>
-
-</main>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+    </main>
 
 </body>
 

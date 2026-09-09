@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="pr-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ordem de serviço</title>
+        <style>
+            *{ 
+                margin-left: 10px
+
+            }
+            header{
+            display: inline-flex;
+            width: 100%;
+            }
+            .logoDAE{
+                height: 100px;
+            }
+            .logo{
+                justify-content: right;
+                width: 30%;
+            }
+            .titulo{
+                justify-content: right;
+                width: 70%;
+            }
+            h1{
+                width: 100%;
+                text-align: center;
+            }
+            h2{ 
+                text-align: center
+            }
+            h4{ 
+                text-align: left;
+            }
+            input{ 
+                margin-top: 10px
+            }
+            select{ 
+                margin-top: 10px;
+            }
+            hr{ 
+                border: 2px solid black
+            }
+            #processo{ 
+                text-align: left;
+                width: 95px;
+            }
+            #hidrometro{ 
+                text-align: left;
+                width: 95px;
+            }
+            #nome{
+                width: 80%;
+            }
+            #rua{
+                width: 60%;
+            }
+            #numero{
+                width: 50px;
+            }
+            #bairro{
+                width: 30%;
+            }            
+            #telefone{
+                width: 30%;
+            }
+            .tela2{
+                margin-top: 100px;
+            }
+            p{
+                margin-top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img class="logoDAE" src="logoDAE.png" alt="Logo_DAE">
+            </div>
+            <div class="titulo">
+                <h1>SERVIÇO DE LIGAÇÃO</h1>
+                <h2>SOLICITAÇÃO DE LIGAÇÃO</h2>
+            </div><br>
+        </header>
+        <main>
+            <div>
+                <label>PROCESSO:</label><input type="text" id="processo"/>
+                
+                <label>REGIONAL:</label>
+                    <select>
+                        <optgroup>
+                            <option value=""></option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </optgroup>
+                    </select>
+                
+                <label>LIBERADO EM:</label><input type="date" name="data"/><br>
+
+                <label>EXECUTAR ATÉ:</label><input type="date" name="data"/><label>DATA DA EXECUÇÃO: ____/____/______</label><br>
+
+
+                <label>SOLICITAÇÃO DE: </label>
+                    <select>
+                        <optgroup>
+                            <option value=""></option>
+                            <option value="ÁGUA E ESGOTO">LIGAÇÃO DE ÁGUA E ESGOTO</option>
+                            <option value="SOMENTE ÁGUA">LIGAÇÃO SOMENTE ÁGUA</option>
+                            <option value="SOMENTE ESGOTO">LIGAÇÃO SOMENTE ESGOTO</option>
+                        </optgroup>
+                    </select>
+                <label>HIDRÔMETRO:</label><input type="text" id="hidrometro"><br>          
+                <label>ÁGUA:</label>
+                    <select>
+                        <optgroup>
+                            <option value=""></option>
+                            <option value="PASSEIO">REDE DE ÁGUA NO PASSEIO</option>
+                            <option value="RAMAL DE ÁGUA LOCALIZADO">RAMAL DE ÁGUA LOCALIZADO</option>
+                            <option value="ÁGUA LIGADA">ÁGUA LIGADA</option>
+                            <option value="RAMAL DE ÁGUA NÃO LOCALIZADO">RAMAL DE ÁGUA NÃO LOCALIZADO</option>
+                            <option value="NAO TEM RAMAL">NÃO TEM RAMAL DE ÁGUA</option>          
+                        </optgroup>
+                    </select>
+                    <label>TIPO DE LIGAÇÃO:</label>
+                    <select>
+                        <optgroup>
+                            <option value=""></option>
+                            <option value="MANUAL">"LIGAÇÃO MANUAL"</option>
+                            <option value="ABERTURA">"ABERTURA DE RUA"</option>
+                            <option value="RELIGAÇÃO">RELIGAÇÃO</option>
+                        </optgroup>
+                    </select><br>
+                    <label>ESGOTO:</label>
+                    <select>
+                        <optgroup>
+                            <option value=""></option>
+                            <option value="PASSEIO">REDE DE ESGOTO NO PASSEIO</option>
+                            <option value="RAMAL DE ESGOTO LOCALIZADO">RAMAL DE ESGOTO LOCALIZADO</option>
+                            <option value="ESGOTO LIGADO">ESGOTO LIGADO</option>
+                            <option value="RAMAL DE ESGOTO NÃO LOCALIZADO">RAMAL DE ESGOTO NÃO LOCALIZADO</option>
+                            <option value="NAO TEM RAMAL">NÃO TEM RAMAL DE ESGOTO</option>          
+                        </optgroup>
+                    </select>
+                <label>ABERTURA:</label>
+                    <select>
+                        <optgroup>
+                            <option value=""></option>
+                            <option value="ASFALTO">ASFALTO</option>
+                            <option value="TERRA">TERRA</option>
+                            <option value="PARALELEPIPEDO">PARALELEPIPEDO</option>
+                            <option value="OUTROS">OUTROS</option>
+                        </optgroup>
+                    </select><br><br>
+                <hr>
+            </div>            
+
+            <div class="imovel">
+                <h2>DADOS DO IMÓVEL</h2>
+                <form action="">
+                    <label>Nome:<input type="text" id="nome"></label><br>
+                    <label>Rua:<input name="rua" id="rua"></label>
+                    <label>Nº:<input name="numero" id="numero"></label><br>
+                    <label>Bairro:<input name="bairro" id="bairro"></label>
+                    <label>Telefone:<input name="telefone" id="telefone"></label>
+                </form>
+            </div><br>
+            <div>
+                <h2>MATERIAIS UTILIZADOS NAS LIGAÇÕES</h2>
+                <img src="materiais.JPG" alt="materiais" width="90%" height="50%">
+            </div>
+            <p>Para uso das equipes</p>
+            <div class="tela2">
+                <img src="cadastramento de rede de água.JPG" alt="materiais" width="90%" height="50%">
+                <img src="cadastramento de rede de esgoto.JPG" alt="materiais" width="90%" height="50%">
+                <img src="termo.JPG" alt="materiais" width="90%" height="50%">
+            </div>
+        </main>
+        <div style="text-align: center;">
+            <button><a href="index.html">VOLTAR</a></button>
+            <button onclick="window.print()">IMPRIMIR / SALVAR PDF</button>
+        </div>
+        
+    </body>
+</html>
